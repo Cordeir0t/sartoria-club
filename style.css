@@ -3,63 +3,35 @@
    Tipografia luxuosa + Fundo foto elegante
    ========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@media (max-width: 768px) {
+  header {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    padding: 0.8rem 1rem; /* Padding menor também */
+    gap: 0.5rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem !important; /* Letra menor no logo */
+    letter-spacing: 1px; /* Espaçamento reduzido */
+  }
+  
+  nav {
+    font-size: 0.8rem; /* Menu todo menor */
+  }
+  
+  nav a {
+    font-size: 0.8rem !important; /* Links individuais menores */
+    padding: 0.2rem; /* Espaço interno menor */
+  }
+  
+  nav ul {
+    gap: 0.5rem; /* Gap menor entre links */
+  }
+  
+  /* Seu resto igual... */
 }
 
-body {
-  background-color: #000;
-  color: #eaeaea;
-  font-family: 'Cormorant Garamond', serif;
-  line-height: 1.7;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-/* ===============================
-   CABEÇALHO FIXO
-   =============================== */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 4rem;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-  z-index: 999;
-  transition: all 0.3s ease;
-}
-
-.logo {
-  font-family: 'Cinzel', serif;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #d4af37;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.logo:hover {
-  color: #f5d77d;
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2.5rem;
-}
 
 nav a {
   text-decoration: none;
@@ -623,3 +595,4 @@ footer {
     padding: 4rem 1rem;
   }
 }
+
