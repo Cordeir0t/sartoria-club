@@ -1,0 +1,253 @@
+/* ==========================================
+   SARTORIA CLUB
+   Cores exatas da logo + Barra superior
+   ========================================== */
+
+:root {
+  /* CORES EXATAS DA LOGO */
+  --azul-logo: #1A3C5B;      /* Azul marinho da logo */
+  --dourado-logo: #D4AF37;   /* Dourado da logo */
+  --branco-logo: #FFFFFF;    /* Branco da logo */
+  --preto-base: #0a0a0a;     /* Fundo preto */
+  --preto-card: #1a1a1a;     /* Cards */
+}
+
+/* ==========================================
+   HEADER/BARRA SUPERIOR - RESTAURADA
+   ========================================== */
+header {
+  background: linear-gradient(180deg, var(--preto-base) 0%, rgba(26,60,91,0.2) 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(212,175,55,0.15);
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  background: linear-gradient(135deg, var(--dourado-logo), #E8C566);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+nav a {
+  color: #d1d1d1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--dourado-logo);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--dourado-logo);
+}
+
+/* ==========================================
+   BODY + FUNDO PRETO ORIGINAL
+   ========================================== */
+body {
+  background: var(--preto-base);
+  color: #d1d1d1;
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  margin-top: 80px;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(26,60,91,0.7)), 
+              url('../imagens/atelie.jpeg') center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #fff;
+  text-shadow: 3px 3px 15px rgba(0,0,0,1);
+  letter-spacing: 2px;
+}
+
+/* BOTÕES */
+.btn {
+  background: linear-gradient(135deg, var(--dourado-logo) 0%, #B89523 100%);
+  color: #000 !important;
+  font-family: 'Cinzel', serif;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(212,175,55,0.3);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(212,175,55,0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--dourado-logo);
+  border: 2px solid var(--dourado-logo);
+}
+
+.btn-secondary:hover {
+  background: var(--dourado-logo);
+  color: #000;
+}
+
+/* SEÇÕES */
+section {
+  padding: 8rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(10,10,10,0.95);
+}
+
+.about-preview,
+.conteudo,
+.produtos {
+  background: linear-gradient(135deg, var(--preto-base) 0%, var(--preto-card) 100%);
+  padding: 6rem 2rem;
+  margin: 4rem auto;
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,0.1);
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.card {
+  background: linear-gradient(145deg, var(--preto-card), #1a1a1a);
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  box-shadow: 0 30px 60px rgba(212,175,55,0.25);
+  border-color: var(--dourado-logo);
+}
+
+/* SOB MEDIDA */
+.passos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.passo {
+  background: linear-gradient(145deg, var(--preto-card), #1a1a1a);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,0.15);
+}
+
+.numero {
+  background: linear-gradient(135deg, var(--dourado-logo), #B89523);
+  color: #000;
+}
+
+/* CONTATO */
+.info-card {
+  background: linear-gradient(145deg, var(--preto-card), #1a1a1a);
+  border: 1px solid rgba(212,175,55,0.15);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+}
+
+.form-contato input,
+.form-contato textarea {
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  border: 1px solid #333;
+  color: #eee;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+  border-color: var(--dourado-logo);
+}
+
+/* RODAPÉ */
+footer {
+  background: linear-gradient(180deg, var(--preto-base) 0%, rgba(26,60,91,0.2) 100%);
+  color: #888;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(212,175,55,0.1);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  nav ul {
+    gap: 0.5rem;
+  }
+  
+  nav a {
+    font-size: 0.8rem;
+  }
+  
+  .hero {
+    margin-top: 100px;
+    height: 80vh;
+  }
+}
